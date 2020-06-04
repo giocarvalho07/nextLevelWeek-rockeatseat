@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Coleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&Ubuntu,wght@0,300;1,300&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="styles/create.css">
+    
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+
+</head>
+<body>
+
+    <div id="page-home">
+
+        <div class="content" >
+            <header>
+                <img  class="logo" src="assets/logo.svg" alt="logomarca">
+                
+                <a href="/"> voltar a home
+                    <span>
+
+                    </span>
+                </a>
+            </header>
+
+            <div class="caixa" >
+                <form action="">
+                    <h1>
+                        Cadastro de pontos de coleta
+                    </h1>
+    
+                    <fieldset>
+                        <legend>
+                            <h2>
+                               Dados da entidade 
+                            </h2>
+    
+                            <div class="field">
+                                <label for="nome da entidade"> 
+                                    Nome da entidade
+                                </label>
+                                <input type="text"  name="name">
+    
+                            </div>
+    
+                            <div class="field-group">
+    
+                              <div class="field">
+                                <label for="adress"> 
+                                    Endereço
+                                </label>
+                                <input type="text"  name="adress">
+                                </div>
+    
+                                <div class="field">
+                                <label for="adress2"> 
+                                    Número
+                                </label>
+                                <input type="number"  name="adress2">
+                                </div>  
+    
+                            </div>
+    
+                            <div class="field-group">
+    
+                                <div class="field">
+                                  <label for="state"> 
+                                      Estado
+                                  </label>
+                                  <select name="uf">
+                                      <option value="">
+                                          selecione o estado
+                                      </option>
+                                  </select>
+                                  </div>
+      
+                                  <div class="field">
+                                    <label for="city"> 
+                                        Cidade
+                                    </label>
+                                    <select name="city" disabled >
+                                        <option value="">
+                                            selecione a cidade
+                                        </option>
+                                    </select>
+                                    </div>
+                              </div>
+                        </legend>
+    
+                    </fieldset>
+                        <legend>
+                            <h2>
+                                Itens de coleta
+                            </h2>
+                        </legend>
+                    <fieldset>
+    
+    
+                    </fieldset>
+    
+                    <button type="submit">
+                        cadastrar ponto
+                    </button>
+    
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>
