@@ -7,13 +7,12 @@ function searchUf(){
         .then( states => {
 
             for (const state of states){
-                ufSelect.innerHTML += ` <option value="${state.id}">${state.nome}</option> `
+                ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
             } 
         } )
 }
 
 searchUf()
-
 
 function getCities(event){
     
@@ -21,23 +20,44 @@ function getCities(event){
 
     const ufValue = event.target.value
 
-    const indexOfSelectedState = event.target.selectedIndex
-    stateInput.value = event.target.options[indexOfSelectedState].text
+    //const indexOfSelectedState = event.target.selectedIndex
+    //stateInput.value = event.target.options[indexOfSelectedState].text
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
     
+
     fetch(url)
-        .then( res =>  res.json())
-        .then( cities => {
+    .then( res =>  res.json())
+    .then( cities => {
 
-            for (const city of cities){
-                citySelect.innerHTML += ` <option value="${city.id}">${city.nome}</option> `
-            } 
+        for (const city of cities){
+            citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
+        } 
 
-            citySelect.disabled = false
+        citySelect.disabled = false
+
         } )
 }
 
-document.querySelector("select[name=uf").addEventListener("change", getCities)
+document
+    .querySelector("select[name=uf]")
+    .addEventListener("change", getCities)
 
+
+//itens de coleta 
+
+const itensToCollect = document.querySelectorAll(".itens-grid li")
+
+for (const item of itensToCollect){
+    item.addEventListener("click", handlerSelectedItem)
+}
+
+function handlerSelectedItem(event){
+    const itemLi = event.target
+
+    itemLi.classList.toggle("selected")
+
+    const itemId = itemLi.dataset.id
+
+}
 
